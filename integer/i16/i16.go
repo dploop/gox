@@ -1,15 +1,8 @@
 package i16
 
-func Max(x int16, y int16) int16 {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func Min(x int16, y int16) int16 {
-	if x < y {
-		return x
-	}
-	return y
-}
+const (
+	Size = 16
+	Half = 15
+	Min  = -32768
+	Max  = 32767
+)

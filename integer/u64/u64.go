@@ -1,15 +1,8 @@
 package u64
 
-func Max(x uint64, y uint64) uint64 {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func Min(x uint64, y uint64) uint64 {
-	if x < y {
-		return x
-	}
-	return y
-}
+const (
+	Size = 64
+	Half = 63
+	Min  = 0
+	Max  = 18446744073709551615
+)

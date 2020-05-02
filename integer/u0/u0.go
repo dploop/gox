@@ -1,15 +1,8 @@
 package u0
 
-func Max(x uint, y uint) uint {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func Min(x uint, y uint) uint {
-	if x < y {
-		return x
-	}
-	return y
-}
+const (
+	Size = 32 << (^uint(0) >> 63)
+	Half = Size - 1
+	Min  = 0
+	Max  = 1<<Size - 1
+)

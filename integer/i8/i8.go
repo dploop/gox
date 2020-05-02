@@ -1,15 +1,8 @@
 package i8
 
-func Max(x int8, y int8) int8 {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func Min(x int8, y int8) int8 {
-	if x < y {
-		return x
-	}
-	return y
-}
+const (
+	Size = 8
+	Half = 7
+	Min  = -128
+	Max  = 127
+)

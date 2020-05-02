@@ -1,15 +1,8 @@
 package i64
 
-func Max(x int64, y int64) int64 {
-	if x > y {
-		return x
-	}
-	return y
-}
-
-func Min(x int64, y int64) int64 {
-	if x < y {
-		return x
-	}
-	return y
-}
+const (
+	Size = 64
+	Half = 63
+	Min  = -9223372036854775808
+	Max  = 9223372036854775807
+)
