@@ -1,11 +1,6 @@
 linters:
   enable-all: true
   disable:
+    - gomnd
+    - lll
     - wsl
-    - dupl
-
-issues:
-  exclude-rules:
-    - path: _test\.go
-      linters:
-        - gomnd
