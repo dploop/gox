@@ -1,11 +1,11 @@
 package gox
 
 import (
-	"github.com/dploop/gox/integer/i0"
 	"github.com/dploop/gox/integer/i16"
 	"github.com/dploop/gox/integer/i32"
 	"github.com/dploop/gox/integer/i64"
 	"github.com/dploop/gox/integer/i8"
+	"github.com/dploop/gox/integer/ix"
 )
 
 func AbsInt8Fast(x int8) int8 {
@@ -57,7 +57,7 @@ func AbsInt64Base(x int64) int64 {
 }
 
 func AbsIntFast(x int) int {
-	s := x >> i0.Half
+	s := x >> ix.Half
 	return (x ^ s) - s
 }
 

@@ -1,8 +1,8 @@
 package u8
 
 const (
-	Size = 8
-	Half = 7
-	Min  = 0
-	Max  = 255
+	Size int  = 8
+	Half int  = 7
+	Min  uint = 0
+	Max  uint = 255
 )

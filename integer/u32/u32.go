@@ -1,8 +1,8 @@
 package u32
 
 const (
-	Size = 32
-	Half = 31
-	Min  = 0
-	Max  = 4294967295
+	Size int  = 32
+	Half int  = 31
+	Min  uint = 0
+	Max  uint = 4294967295
 )

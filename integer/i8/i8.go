@@ -1,8 +1,8 @@
 package i8
 
 const (
-	Size = 8
-	Half = 7
-	Min  = -128
-	Max  = 127
+	Size int  = 8
+	Half int  = 7
+	Min  int8 = -128
+	Max  int8 = 127
 )

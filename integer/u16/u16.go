@@ -1,8 +1,8 @@
 package u16
 
 const (
-	Size = 16
-	Half = 15
-	Min  = 0
-	Max  = 32767
+	Size int  = 16
+	Half int  = 15
+	Min  uint = 0
+	Max  uint = 32767
 )

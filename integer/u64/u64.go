@@ -1,8 +1,8 @@
 package u64
 
 const (
-	Size = 64
-	Half = 63
-	Min  = 0
-	Max  = 18446744073709551615
+	Size int  = 64
+	Half int  = 63
+	Min  uint = 0
+	Max  uint = 18446744073709551615
 )

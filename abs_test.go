@@ -5,11 +5,11 @@ import (
 	"testing"
 
 	"github.com/dploop/gox"
-	"github.com/dploop/gox/integer/i0"
 	"github.com/dploop/gox/integer/i16"
 	"github.com/dploop/gox/integer/i32"
 	"github.com/dploop/gox/integer/i64"
 	"github.com/dploop/gox/integer/i8"
+	"github.com/dploop/gox/integer/ix"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -186,14 +186,14 @@ func TestAbsInt(t *testing.T) {
 		x        int
 		expected int
 	}{
-		{i0.Min, i0.Min},
-		{i0.Min + 1, i0.Max},
+		{ix.Min, ix.Min},
+		{ix.Min + 1, ix.Max},
 		{-42, 42},
 		{-1, 1},
 		{0, 0},
 		{1, 1},
 		{42, 42},
-		{i0.Max, i0.Max},
+		{ix.Max, ix.Max},
 	}
 	for _, item := range itemList {
 		actual := gox.AbsIntFast(item.x)
