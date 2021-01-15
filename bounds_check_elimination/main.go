@@ -28,7 +28,9 @@ func slow(x string, y string) {
 	var sum int
 	for r := 0; r < repeat; r++ {
 		for i := 0; i < len(x); i++ {
-			if x[i] != y[i] {
+			xi := x[i]
+			yi := y[i]
+			if xi != yi {
 				break
 			}
 			sum++
@@ -48,7 +50,9 @@ func fast(x string, y string) {
 	var sum int
 	for k := 0; k < repeat; k++ {
 		for i := 0; i < len(x); i++ {
-			if x[i] != y[i] {
+			xi := x[i]
+			yi := y[i]
+			if xi != yi {
 				break
 			}
 			sum++
