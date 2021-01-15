@@ -7,10 +7,9 @@ import (
 )
 
 const (
-	repeat   = 100
-	length   = 9999999
-	slowStep = 1000
-	fastStep = 9999998
+	length   = 499999999
+	slowStep = 20000
+	fastStep = 1
 )
 
 func main() {
@@ -25,11 +24,9 @@ func main() {
 func do(name string, array []int, step int) {
 	defer utils.LogElapsed(name)()
 	var sum int64
-	for r := 0; r < repeat; r++ {
-		for i := step; i != 0; {
-			sum += int64(array[i])
-			i = (i + step) % length
-		}
+	for i := step; i != 0; {
+		sum += int64(array[i])
+		i = (i + step) % length
 	}
 	log.Printf("%s sum is %v", name, sum)
 }
