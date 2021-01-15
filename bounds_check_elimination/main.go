@@ -7,21 +7,26 @@ import (
 	"github.com/dploop/gox/utils"
 )
 
-// https://go101.org/article/bounds-check-elimination.html
+const (
+	repeat = 1000000
+	xcount = 999
+	ycount = 998
+)
+
 func main() {
-	x := strings.Repeat("hello", 999) + "world!"
-	y := strings.Repeat("hello", 998) + "world!"
-	slower(x, y)
-	faster(x, y)
+	x := strings.Repeat("hello", xcount) + "world!"
+	y := strings.Repeat("hello", ycount) + "world!"
+	slow(x, y)
+	fast(x, y)
 }
 
-func slower(x string, y string) {
+func slow(x string, y string) {
 	if len(x) > len(y) {
 		x, y = y, x
 	}
-	defer utils.LogElapsed("slower")()
+	defer utils.LogElapsed("slow")()
 	var sum int
-	for k := 0; k < 1000000; k++ {
+	for r := 0; r < repeat; r++ {
 		for i := 0; i < len(x); i++ {
 			if x[i] != y[i] {
 				break
@@ -29,19 +34,19 @@ func slower(x string, y string) {
 			sum++
 		}
 	}
-	log.Printf("slower sum is %v", sum)
+	log.Printf("slow sum is %v", sum)
 }
 
-func faster(x string, y string) {
+func fast(x string, y string) {
 	if len(x) > len(y) {
 		x, y = y, x
 	}
 	if len(x) > len(y) {
 		return
 	}
-	defer utils.LogElapsed("faster")()
+	defer utils.LogElapsed("fast")()
 	var sum int
-	for k := 0; k < 1000000; k++ {
+	for k := 0; k < repeat; k++ {
 		for i := 0; i < len(x); i++ {
 			if x[i] != y[i] {
 				break
@@ -49,5 +54,5 @@ func faster(x string, y string) {
 			sum++
 		}
 	}
-	log.Printf("faster sum is %v", sum)
+	log.Printf("fast sum is %v", sum)
 }

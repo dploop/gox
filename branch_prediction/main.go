@@ -8,39 +8,32 @@ import (
 	"github.com/dploop/gox/utils"
 )
 
-// https://stackoverflow.com/questions/11227809/why-is-processing-a-sorted-array-faster-than-processing-an-unsorted-array
+const (
+	repeat = 1000
+	length = 1000000
+	limit  = 2000
+	half   = 1000
+)
+
 func main() {
-	array := make([]int, 1000000)
-	for i := 0; i < len(array); i++ {
-		array[i] = rand.Intn(65536) - 32768
+	array := make([]int, length)
+	for i := 0; i < length; i++ {
+		array[i] = rand.Intn(limit) - half
 	}
-	slower(array)
-	sort.Slice(array, func(i, j int) bool {
-		return array[i] < array[j]
-	})
-	faster(array)
+	do("slow", array)
+	sort.Ints(array)
+	do("fast", array)
 }
 
-func slower(array []int) {
-	defer utils.LogElapsed("slower")()
-	sum := do(array)
-	log.Printf("slower sum is %v", sum)
-}
-
-func faster(array []int) {
-	defer utils.LogElapsed("faster")()
-	sum := do(array)
-	log.Printf("faster sum is %v", sum)
-}
-
-func do(array []int) int {
+func do(name string, array []int) {
+	defer utils.LogElapsed(name)()
 	var sum int
-	for k := 0; k < 1000; k++ {
-		for i := 0; i < len(array); i++ {
+	for r := 0; r < repeat; r++ {
+		for i := 0; i < length; i++ {
 			if array[i] > 0 {
 				sum += array[i]
 			}
 		}
 	}
-	return sum
+	log.Printf("%s sum is %v", name, sum)
 }
