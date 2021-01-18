@@ -48,7 +48,7 @@ func fast(x string, y string) {
 	}
 	defer utils.LogElapsed("fast")()
 	var sum int
-	for k := 0; k < repeat; k++ {
+	for r := 0; r < repeat; r++ {
 		for i := 0; i < len(x); i++ {
 			xi := x[i]
 			yi := y[i]
