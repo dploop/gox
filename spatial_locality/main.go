@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	length   = 499999999
-	slowStep = 20000
+	length   = 499_999_999
+	slowStep = 20_000
 	fastStep = 1
 )
 

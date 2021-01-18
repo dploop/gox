@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	repeat = 1000000
+	repeat = 1_000_000
 	xcount = 999
 	ycount = 998
 )

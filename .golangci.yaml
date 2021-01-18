@@ -66,9 +66,3 @@ linters:
     - whitespace
     - wrapcheck
     #- wsl
-
-issues:
-  exclude-rules:
-    - linters:
-        - gosec
-      text: "G404: Use of weak random number generator"

@@ -8,7 +8,7 @@ import (
 
 const (
 	concurrency = 2
-	repeat      = 50000000
+	repeat      = 50_000_000
 )
 
 func main() {

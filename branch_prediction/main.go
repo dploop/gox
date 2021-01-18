@@ -2,23 +2,20 @@ package main
 
 import (
 	"log"
-	"math/rand"
 	"sort"
 
 	"github.com/dploop/gox/utils"
 )
 
 const (
-	repeat = 1000
-	length = 1000000
-	limit  = 2000
-	half   = 1000
+	repeat = 1_000
+	length = 1_000_000
 )
 
 func main() {
 	array := make([]int, length)
 	for i := 0; i < length; i++ {
-		array[i] = rand.Intn(limit) - half
+		array[i] = (i & 3) - 2
 	}
 	do("slow", array)
 	sort.Ints(array)
@@ -30,7 +27,7 @@ func do(name string, array []int) {
 	var sum int
 	for r := 0; r < repeat; r++ {
 		for i := 0; i < length; i++ {
-			if array[i] > 0 {
+			if array[i] >= 0 {
 				sum += array[i]
 			}
 		}

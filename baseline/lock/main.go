@@ -8,8 +8,7 @@ import (
 
 const (
 	concurrency = 2
-	repeat      = 100000000
-	modulo      = 16
+	repeat      = 100_000_000
 )
 
 func main() {
@@ -24,9 +23,8 @@ func main() {
 		go func() {
 			defer wg.Done()
 			for r := 0; r < repeat; r++ {
-				d := int64(r % modulo)
 				mu.Lock()
-				sum += d
+				sum += 2
 				mu.Unlock()
 			}
 		}()
@@ -34,6 +32,6 @@ func main() {
 	wg.Wait()
 	elapsed := time.Since(start)
 	log.Printf("sum is %v", sum)
-	ops := float64(repeat*concurrency) / elapsed.Seconds()
-	log.Printf("%.0f operation per second", ops)
+	ops := int64(concurrency * repeat / elapsed.Seconds())
+	log.Printf("%v operation per second", ops)
 }

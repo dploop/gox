@@ -9,7 +9,7 @@ import (
 
 const (
 	concurrency = 8
-	repeat      = 50000000
+	repeat      = 50_000_000
 	slowShard   = 1
 	fastShard   = 8
 )

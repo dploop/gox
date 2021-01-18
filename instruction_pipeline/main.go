@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	repeat = 10000000000
+	repeat = 10_000_000_000
 	step   = 8
 )
 
