@@ -1,4 +1,4 @@
-# gox
+# gox [![License](https://img.shields.io/badge/license-BSD%202--Clause-green.svg)](https://opensource.org/licenses/BSD-2-Clause) [![Build Status](https://github.com/dploop/gox/actions/workflows/build.yml/badge.svg)](https://github.com/dploop/gox/actions)
 
 ### CPU与缓存基础训练
 
